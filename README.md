@@ -1,0 +1,1 @@
+Prompt the AI art generator with your dreams and watch the Art appear before your eyes. Save to gallery and when you need to remember your dreams you can look back at your gallery for Date, Prompt, and a piece of art to remind you of what you were dreaming
