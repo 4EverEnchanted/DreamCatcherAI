@@ -1,0 +1,12 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  VITE_STRIPE_PUBLIC_KEY = "pk_live_51R2GejBZV4sMzH2qrSYxX2ekFWyaLU7u5SMlOFHuaSwEoPasFfRmRtHvfXpWnyM5CRHZBk9LrnOtnqZSvi9DGt4L00YMYvAuIU"
