@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Chicle', cursive;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chicle', cursive;
+  }
+}
+
+.dream-text {
+  font-family: 'Chicle', cursive;
+  background: linear-gradient(to bottom, #ff4d4d, #ff9933);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 
+    0 0 10px rgba(255, 77, 77, 0.3),
+    0 0 20px rgba(255, 153, 51, 0.2);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.dream-container {
+  background: linear-gradient(45deg, rgba(25, 0, 51, 0.9), rgba(51, 0, 102, 0.9));
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  box-shadow: 
+    0 0 15px rgba(255, 77, 77, 0.2),
+    inset 0 0 20px rgba(255, 153, 51, 0.1);
+}
+
+.dream-card,
+.dream-details,
+.filter-container {
+  @apply dream-text;
+}
+
+/* Gallery Animations */
+.gallery-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.gallery-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-item-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.gallery-item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Bolt.new badge styling */
+.bolt-badge {
+  font-family: 'Chicle', cursive;
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.3), rgba(99, 102, 241, 0.3));
+  backdrop-filter: blur(8px);
+}
