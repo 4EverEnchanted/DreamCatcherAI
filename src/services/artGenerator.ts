@@ -1,7 +1,7 @@
 import { HfInference } from '@huggingface/inference';
 
 const token = process.env.HUGGING_FACE_TOKEN || "YOUR_TOKEN_HERE";
-Const hf = new HfInference(token)
+const hf = new HfInference(token);
 
 export async function generateDreamArt(description: string): Promise<string> {
   try {
