@@ -1,14 +1,13 @@
 import { HfInference } from '@huggingface/inference';
 
 const token = process.env.HUGGING_FACE_TOKEN;
+console.log("Token value:", token); // Temporary debug log
 const hf = new HfInference(token);
 
 export async function generateDreamArt(description: string): Promise<string> {
   try {
-    // Create a more detailed prompt based on the description
     const prompt = `Psychedelic dream art, surreal and ethereal: ${description}. Vibrant colors, flowing forms, dreamlike quality, digital art style.`;
     
-    // Generate image using Stable Diffusion
     const response = await hf.textToImage({
       model: "stabilityai/stable-diffusion-2-1",
       inputs: prompt,
@@ -19,7 +18,6 @@ export async function generateDreamArt(description: string): Promise<string> {
       }
     });
 
-    // Convert blob to base64
     const blob = await response.blob();
     const reader = new FileReader();
     
@@ -36,7 +34,6 @@ export async function generateDreamArt(description: string): Promise<string> {
     });
   } catch (error) {
     console.error('Error generating dream art:', error);
-    // Fallback to placeholder images if API fails
     const fallbackImages = [
       'https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg',
       'https://images.pexels.com/photos/5022849/pexels-photo-5022849.jpeg',
